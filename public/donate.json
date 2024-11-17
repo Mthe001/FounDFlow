@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Support Education for All",
+    "image": "https://example.com/images/education_campaign.jpg",
+    "description": "Providing school supplies and scholarships to underprivileged children.",
+    "status": "Active",
+    "contactInfo": "education@donate.org",
+    "division": "Education"
+  },
+  {
+    "id": 2,
+    "title": "Healthcare Access Initiative",
+    "image": "https://example.com/images/healthcare_campaign.jpg",
+    "description": "Raising funds for medical camps in rural areas.",
+    "status": "Active",
+    "contactInfo": "healthcare@donate.org",
+    "division": "Healthcare"
+  },
+  {
+    "id": 3,
+    "title": "Clean Water for Communities",
+    "image": "https://example.com/images/water_campaign.jpg",
+    "description": "Installing water filtration systems in villages.",
+    "status": "Completed",
+    "contactInfo": "water@donate.org",
+    "division": "Environment"
+  },
+  {
+    "id": 4,
+    "title": "Disaster Relief Fund",
+    "image": "https://example.com/images/disaster_campaign.jpg",
+    "description": "Immediate aid for families affected by natural disasters.",
+    "status": "Active",
+    "contactInfo": "relief@donate.org",
+    "division": "Emergency Response"
+  },
+  {
+    "id": 5,
+    "title": "Wildlife Conservation Efforts",
+    "image": "https://example.com/images/wildlife_campaign.jpg",
+    "description": "Protecting endangered species through habitat preservation.",
+    "status": "Active",
+    "contactInfo": "wildlife@donate.org",
+    "division": "Environment"
+  },
+  {
+    "id": 6,
+    "title": "Community Housing Project",
+    "image": "https://example.com/images/housing_campaign.jpg",
+    "description": "Building affordable housing for low-income families.",
+    "status": "Upcoming",
+    "contactInfo": "housing@donate.org",
+    "division": "Community Development"
+  },
+  {
+    "id": 7,
+    "title": "Mental Health Awareness Drive",
+    "image": "https://example.com/images/mental_health_campaign.jpg",
+    "description": "Organizing workshops and support groups for mental health.",
+    "status": "Active",
+    "contactInfo": "mentalhealth@donate.org",
+    "division": "Healthcare"
+  },
+  {
+    "id": 8,
+    "title": "Green Energy Promotion",
+    "image": "https://example.com/images/green_energy_campaign.jpg",
+    "description": "Encouraging the use of solar and wind energy in urban areas.",
+    "status": "Upcoming",
+    "contactInfo": "energy@donate.org",
+    "division": "Environment"
+  },
+  {
+    "id": 9,
+    "title": "Nutrition for All",
+    "image": "https://example.com/images/nutrition_campaign.jpg",
+    "description": "Providing meals to children in underserved communities.",
+    "status": "Completed",
+    "contactInfo": "nutrition@donate.org",
+    "division": "Healthcare"
+  },
+  {
+    "id": 10,
+    "title": "Empower Women Initiative",
+    "image": "https://example.com/images/women_empowerment_campaign.jpg",
+    "description": "Skills training and financial aid for women entrepreneurs.",
+    "status": "Active",
+    "contactInfo": "women@donate.org",
+    "division": "Community Development"
+  }
+]

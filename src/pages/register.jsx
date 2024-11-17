@@ -1,17 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [acceptTerms, setAcceptTerms] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
+    const [error, setError] = useState("");
+    const { signUp } = useContext(AuthContext);
+    const navigate = useNavigate();
+
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    const handleRegister = (e) => {
+
+    const passwordValidationRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    n
+    const handleRegister = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
@@ -23,9 +35,27 @@ const Register = () => {
             return;
         }
 
-        toast.success("Registration successful!");
-        console.log(name, email, password, photoUrl);
-        // Proceed with form submission or further logic here
+
+        if (!passwordValidationRegex.test(password)) {
+            toast.error(
+                "Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long."
+            );
+            return;
+        }
+
+        try {
+
+            await signUp(email, password, name, photoUrl);
+            toast.success("Registration successful!");
+
+
+            console.log("User info:", { name, email, password, photoUrl });
+
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+            toast.error(error.message);
+        }
     };
 
     return (
@@ -83,44 +113,22 @@ const Register = () => {
                             className="input input-bordered w-full mt-1"
                             placeholder="Enter your password"
                             required
+                            onFocus={() => setIsFocused(true)}
                         />
-                        <button
-                            type="button"
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
-                            onClick={togglePasswordVisibility}
-                        >
-                            {passwordVisible ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13.875 18.825A10.05 10.05 0 0121 12c0-5.523-4.477-10-10-10S1 6.477 1 12c0 2.647 1.017 5.063 2.675 6.825m7.2-7.2a3 3 0 11-4.25 4.25M15.75 9.75l3-3m-3 3l-3-3m9 9l-3-3m3 3l-3 3"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M15 12c0 3.866-3.582 7-8 7m16-3c-1.992 2.632-6.448 3-9 0m-6.707-.707A12.011 12.011 0 0112 2c6.627 0 12 5.373 12 12"
-                                    />
-                                </svg>
-                            )}
-                        </button>
+                        {/* Eye Icon - Only shows when input is focused */}
+                        {isFocused && (
+                            <button
+                                type="button"
+                                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
+                                onClick={togglePasswordVisibility}
+                            >
+                                {passwordVisible ? (
+                                    <FiEyeOff className="h-5 w-5" /> // Eye-off icon when password is visible
+                                ) : (
+                                    <FiEye className="h-5 w-5" /> // Eye icon when password is hidden
+                                )}
+                            </button>
+                        )}
                     </div>
                     <div className="mb-6">
                         <label className="flex items-center space-x-2">
@@ -144,7 +152,7 @@ const Register = () => {
                 </form>
                 <p className="mt-4 text-sm text-center text-gray-600">
                     Already have an account?{" "}
-                    <Link to="/login" className="text-blue-500 hover:underline">
+                    <Link to="/auth/login" className="text-blue-500 hover:underline">
                         Login
                     </Link>
                 </p>
