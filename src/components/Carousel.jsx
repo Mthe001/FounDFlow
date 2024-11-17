@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import EmblaCarouselReact from 'embla-carousel-react';
 
-// Custom CSS for Embla Carousel (can be imported directly into the component)
-import './embla-carousel.css'; // This should be a custom CSS file or you can copy the Embla default styles
+import './embla-carousel.css';
 
 const Carousel = () => {
-    const [emblaRef, emblaApi] = EmblaCarouselReact({ loop: true }); // Enable infinite loop
+    const [emblaRef, emblaApi] = EmblaCarouselReact({ loop: true });
     const [images] = useState([
         'https://images.pexels.com/photos/6113082/pexels-photo-6113082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'https://images.pexels.com/photos/29399294/pexels-photo-29399294/free-photo-of-serene-winter-landscape-with-snowy-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'https://via.placeholder.com/300x200?text=Image+3',
-        'https://via.placeholder.com/300x200?text=Image+4',
-        'https://via.placeholder.com/300x200?text=Image+5',
+        'https://i.ibb.co.com/ZczcTCq/ok4.png',
+        'https://i.ibb.co.com/FKWPG9R/ok.png',
+        'https://i.ibb.co.com/yRQ8kt9/ok2.png',
+        'https://i.ibb.co.com/NskC779/ok3.png',
     ]);
 
-    // Auto-scroll functionality
+
     useEffect(() => {
         if (emblaApi) {
             const interval = setInterval(() => {
-                emblaApi.scrollNext(); // Scroll to the next slide
-            }, 4000); // Change slide every 3 seconds
+                emblaApi.scrollNext();
+            }, 3000);
 
-            // Cleanup interval on component unmount
+
             return () => clearInterval(interval);
         }
     }, [emblaApi]);
 
     useEffect(() => {
         if (emblaApi) {
-            emblaApi.scrollTo(2000); // Scroll to the first slide on initial render
+            emblaApi.scrollTo(0);
         }
     }, [emblaApi]);
 
