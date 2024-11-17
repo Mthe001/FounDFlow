@@ -27,7 +27,7 @@ const Navbar = () => {
                         src={user.photoURL || 'https://via.placeholder.com/150'}
                         alt="User Profile"
                     />
-                    <span>{user.displayName || user.email}</span> {/* Show displayName or email */}
+
                 </div>
             );
         } else {

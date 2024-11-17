@@ -18,15 +18,15 @@ const Login = () => {
     // Wait for user to be loaded
     useEffect(() => {
         if (user) {
-            navigate("/");  // Redirect to home page when user is logged in
+            navigate("/");
         }
     }, [user, navigate]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setError("");  // Reset error message
+        setError("");
         try {
-            await signIn(email, password);  // Perform login using email and password
+            await signIn(email, password);
             toast.success("Login successful!");
         } catch (error) {
             setError(error.message);  // Set error message on failed login

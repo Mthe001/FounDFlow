@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 p-10">
+        <footer className="bg-gradient-to-r from-gray-700 via-indigo-800 to-zinc-900 text-gray-300 p-10">
             <div className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-3">
                 {/* Contact Information */}
                 <div className="space-y-4">
@@ -11,7 +11,7 @@ const Footer = () => {
                         Email:{" "}
                         <a
                             href="mailto:mtheredwanulhaque@gmail.com"
-                            className="text-blue-400 hover:text-blue-500 transition">
+                            className="text-blue-400 hover:text-blue-500 transition duration-300">
                             mtheredwanulhaque@gmail.com
                         </a>
                     </p>
@@ -25,7 +25,7 @@ const Footer = () => {
                             href="https://twitter.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-blue-400 transition">
+                            className="hover:text-blue-400 transition duration-300">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="30"
@@ -39,7 +39,7 @@ const Footer = () => {
                             href="https://youtube.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-red-500 transition">
+                            className="hover:text-red-500 transition duration-300">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="30"
@@ -53,7 +53,7 @@ const Footer = () => {
                             href="https://facebook.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-blue-700 transition">
+                            className="hover:text-blue-700 transition duration-300">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="30"

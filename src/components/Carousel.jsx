@@ -34,7 +34,7 @@ const Carousel = () => {
     return (
         <div className="max-w-4xl mx-auto py-8 h-[50%]">
             <div className="embla " ref={emblaRef}>
-                <div className="embla__container h-[250px]  md:h-[450px] lg:h-[480px] flex space-x-4">
+                <div className="embla__container h-[250px]  md:h-[450px] lg:h-[550px] flex space-x-4">
                     {images.map((image, index) => (
                         <div
                             key={index}
