@@ -1,9 +1,8 @@
 
-
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa"; // Google icon
-import { toast } from "react-toastify"; // Toast notifications
+import { FaGoogle } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../provider/AuthProvider";
 import Loading from "./Loading";
@@ -13,9 +12,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const navigate = useNavigate();  // Hook for navigation
+    const navigate = useNavigate();
 
-    // Wait for user to be loaded
     useEffect(() => {
         if (user) {
             navigate("/");
@@ -29,18 +27,18 @@ const Login = () => {
             await signIn(email, password);
             toast.success("Login successful!");
         } catch (error) {
-            setError(error.message);  // Set error message on failed login
-            toast.error(error.message);  // Show toast with error message
+            setError(error.message);
+            toast.error(error.message);
         }
     };
 
     const handleGoogleSignIn = async () => {
         try {
-            await signInWithGoogle();  // Sign in with Google
-            toast.success("Google Sign-In successful!");  // Show success toast
+            await signInWithGoogle();
+            toast.success("Google Sign-In successful!");
         } catch (error) {
-            setError(error.message);  // Set error message if Google sign-in fails
-            toast.error(error.message);  // Show toast with error message
+            setError(error.message);
+            toast.error(error.message);
         }
     };
 
@@ -49,15 +47,24 @@ const Login = () => {
             toast.error("Please enter your email first.");
             return;
         }
+
+        // Validate if the email is a Gmail address
+        const isValidGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email);
+        if (!isValidGmail) {
+            toast.error("Please enter a valid Gmail address.");
+            return;
+        }
+
         try {
-            await sendPasswordReset(email);  // Send password reset email
+            // Attempt to send a password reset email
+            await sendPasswordReset(email);
             toast.success("Password reset email sent!");
         } catch (error) {
-            toast.error(error.message);  // Show toast on error
+            // Show error if the email is not registered
+            toast.error("Email not registered or there was an issue with the request.");
         }
     };
 
-    // Show loading indicator if user is being authenticated
     if (loading) {
         return <Loading />;
     }
@@ -74,10 +81,10 @@ const Login = () => {
                         <input
                             type="email"
                             id="email"
-                            className="input input-bordered w-full mt-1"
-                            placeholder="Enter your email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            className="input input-bordered w-full mt-1"
+                            placeholder="Enter your email"
                             required
                         />
                     </div>
@@ -88,14 +95,14 @@ const Login = () => {
                         <input
                             type="password"
                             id="password"
-                            className="input input-bordered w-full mt-1"
-                            placeholder="Enter your password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            className="input input-bordered w-full mt-1"
+                            placeholder="Enter your password"
                             required
                         />
                     </div>
-                    {error && <div className="text-red-500">{error}</div>} {/* Display error message */}
+                    {error && <div className="text-red-500">{error}</div>}
                     <button type="submit" className="btn btn-primary w-full">
                         Login
                     </button>
@@ -111,7 +118,10 @@ const Login = () => {
                 </div>
 
                 <p className="mt-4 text-sm text-center text-gray-600">
-                    Don't have an account? <Link to="/auth/register" className="text-blue-500 hover:underline">Register</Link>
+                    Don't have an account?{" "}
+                    <Link to="/auth/register" className="text-blue-500 hover:underline">
+                        Register
+                    </Link>
                 </p>
                 <button
                     type="button"
@@ -121,8 +131,10 @@ const Login = () => {
                     Forgot Password?
                 </button>
             </div>
+            <ToastContainer /> {/* Make sure this is included */}
         </div>
     );
 };
 
 export default Login;
+
