@@ -6,7 +6,10 @@
     "description": "Providing school supplies and scholarships to underprivileged children.",
     "status": "Active",
     "contactInfo": "education@donate.org",
-    "division": "Education"
+    "division": "Education",
+    "supportDivision": [
+      { "name": "Education Assistance", "description": "Provide access to education for children in underserved areas." }
+    ]
   },
   {
     "id": 2,
@@ -15,7 +18,10 @@
     "description": "Raising funds for medical camps in rural areas.",
     "status": "Active",
     "contactInfo": "healthcare@donate.org",
-    "division": "Healthcare"
+    "division": "Healthcare",
+    "supportDivision": [
+      { "name": "Healthcare Access", "description": "Ensure medical services reach rural and underserved populations." }
+    ]
   },
   {
     "id": 3,
@@ -24,7 +30,10 @@
     "description": "Installing water filtration systems in villages.",
     "status": "Completed",
     "contactInfo": "water@donate.org",
-    "division": "Environment"
+    "division": "Environment",
+    "supportDivision": [
+      { "name": "Water Access", "description": "Provide clean water access in rural and underdeveloped communities." }
+    ]
   },
   {
     "id": 4,
@@ -33,7 +42,10 @@
     "description": "Immediate aid for families affected by natural disasters.",
     "status": "Active",
     "contactInfo": "relief@donate.org",
-    "division": "Emergency Response"
+    "division": "Emergency Response",
+    "supportDivision": [
+      { "name": "Emergency Relief", "description": "Support disaster-stricken areas and provide emergency aid." }
+    ]
   },
   {
     "id": 5,
@@ -42,7 +54,10 @@
     "description": "Protecting endangered species through habitat preservation.",
     "status": "Active",
     "contactInfo": "wildlife@donate.org",
-    "division": "Environment"
+    "division": "Environment",
+    "supportDivision": [
+      { "name": "Wildlife Preservation", "description": "Protect endangered species and promote environmental sustainability." }
+    ]
   },
   {
     "id": 6,
@@ -51,7 +66,10 @@
     "description": "Building affordable housing for low-income families.",
     "status": "Upcoming",
     "contactInfo": "housing@donate.org",
-    "division": "Community Development"
+    "division": "Community Development",
+    "supportDivision": [
+      { "name": "Housing Assistance", "description": "Provide affordable housing solutions for low-income families." }
+    ]
   },
   {
     "id": 7,
@@ -60,7 +78,10 @@
     "description": "Organizing workshops and support groups for mental health.",
     "status": "Active",
     "contactInfo": "mentalhealth@donate.org",
-    "division": "Healthcare"
+    "division": "Healthcare",
+    "supportDivision": [
+      { "name": "Mental Health Support", "description": "Raise awareness and provide support for mental health issues." }
+    ]
   },
   {
     "id": 8,
@@ -69,7 +90,10 @@
     "description": "Encouraging the use of solar and wind energy in urban areas.",
     "status": "Upcoming",
     "contactInfo": "energy@donate.org",
-    "division": "Environment"
+    "division": "Environment",
+    "supportDivision": [
+      { "name": "Renewable Energy", "description": "Promote the adoption of solar and wind energy solutions." }
+    ]
   },
   {
     "id": 9,
@@ -78,7 +102,10 @@
     "description": "Providing meals to children in underserved communities.",
     "status": "Completed",
     "contactInfo": "nutrition@donate.org",
-    "division": "Healthcare"
+    "division": "Healthcare",
+    "supportDivision": [
+      { "name": "Nutrition Assistance", "description": "Provide nutritional support to children in need." }
+    ]
   },
   {
     "id": 10,
@@ -87,6 +114,9 @@
     "description": "Skills training and financial aid for women entrepreneurs.",
     "status": "Active",
     "contactInfo": "women@donate.org",
-    "division": "Community Development"
+    "division": "Community Development",
+    "supportDivision": [
+      { "name": "Women's Empowerment", "description": "Support women through education, training, and financial assistance." }
+    ]
   }
 ]

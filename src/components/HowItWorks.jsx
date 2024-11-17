@@ -1,6 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+// Import JSON data
+import donateData from '../../public/donate.json';
 
 const HowItWorks = () => {
+    const [isCollectionModalOpen, setIsCollectionModalOpen] = useState(false);
+    const [isDivisionModalOpen, setIsDivisionModalOpen] = useState(false);
+
+    const collectionPoints = [
+        { name: "Location 1", address: "123 Street, City" },
+        { name: "Location 2", address: "456 Avenue, City" },
+        { name: "Location 3", address: "789 Boulevard, City" },
+        { name: "Location 4", address: "1011 Drive, City" },
+    ];
+
+    // State to hold supported divisions
+    const [supportedDivisions, setSupportedDivisions] = useState([]);
+
+    // Load supported divisions from JSON
+    useEffect(() => {
+        if (donateData && donateData.supportedDivisions) {
+            setSupportedDivisions(donateData.supportedDivisions);
+        }
+    }, []);
+
+    const openCollectionModal = () => setIsCollectionModalOpen(true);
+    const closeCollectionModal = () => setIsCollectionModalOpen(false);
+
+    const openDivisionModal = () => setIsDivisionModalOpen(true);
+    const closeDivisionModal = () => setIsDivisionModalOpen(false);
+
     return (
         <div className="max-w-screen-xl mx-auto py-12 px-6 sm:px-8 lg:px-12">
             <div className="text-center mb-12">
@@ -17,9 +47,9 @@ const HowItWorks = () => {
                     <p className="text-lg mb-4">
                         Making a donation is simple! Choose the amount you want to donate and submit your payment securely. Every little bit helps.
                     </p>
-                    <button className="bg-white text-blue-600 text-lg py-2 px-4 rounded-full hover:bg-blue-50 transition duration-300">
+                    <Link to="/donation-campaigns" className="bg-white text-blue-600 text-lg py-2 px-4 rounded-full hover:bg-blue-50 transition duration-300">
                         Donate Now
-                    </button>
+                    </Link>
                 </div>
 
                 <div className="bg-green-600 text-white p-8 rounded-lg shadow-lg">
@@ -27,7 +57,10 @@ const HowItWorks = () => {
                     <p className="text-lg mb-4">
                         You can drop off your donations at one of our collection points. We have multiple locations available, and we ensure they are easily accessible.
                     </p>
-                    <button className="bg-white text-green-600 text-lg py-2 px-4 rounded-full hover:bg-green-50 transition duration-300">
+                    <button
+                        onClick={openCollectionModal}
+                        className="bg-white text-green-600 text-lg py-2 px-4 rounded-full hover:bg-green-50 transition duration-300"
+                    >
                         Find Collection Points
                     </button>
                 </div>
@@ -37,7 +70,10 @@ const HowItWorks = () => {
                     <p className="text-lg mb-4">
                         We support various causes, including healthcare, education, and environmental conservation. Your donations help fund these divisions.
                     </p>
-                    <button className="bg-white text-yellow-600 text-lg py-2 px-4 rounded-full hover:bg-yellow-50 transition duration-300">
+                    <button
+                        onClick={openDivisionModal}
+                        className="bg-white text-yellow-600 text-lg py-2 px-4 rounded-full hover:bg-yellow-50 transition duration-300"
+                    >
                         View Supported Divisions
                     </button>
                 </div>
@@ -65,10 +101,54 @@ const HowItWorks = () => {
                 <p className="text-lg sm:text-xl text-gray-700 mb-8">
                     Ready to make a difference? Your support is the key to our success. Together, we can build a better future for all.
                 </p>
-                <button className="bg-blue-600 text-white text-xl py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                <Link to="/dashboard" className="bg-blue-600 text-white text-xl py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
                     Get Started
-                </button>
+                </Link>
             </section>
+
+            {/* Modal to show collection points */}
+            {isCollectionModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
+                        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Collection Points</h3>
+                        <ul className="space-y-4">
+                            {collectionPoints.map((point, index) => (
+                                <li key={index} className="text-lg text-gray-700">
+                                    <strong>{point.name}</strong> - {point.address}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={closeCollectionModal}
+                            className="mt-6 bg-green-600 text-white py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal to show supported divisions */}
+            {isDivisionModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
+                        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Supported Divisions</h3>
+                        <ul className="space-y-4">
+                            {supportedDivisions.map((division, index) => (
+                                <li key={index} className="text-lg text-gray-700">
+                                    <strong>{division.title}:</strong> {division.description}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={closeDivisionModal}
+                            className="mt-6 bg-yellow-600 text-white py-2 px-4 rounded-full hover:bg-yellow-700 transition duration-300"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
