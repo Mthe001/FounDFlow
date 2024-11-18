@@ -11,7 +11,7 @@ const About = () => {
     const headingRefs = useRef([]);
 
     useEffect(() => {
-        // Animation for headings
+
         headingRefs.current.forEach((heading) => {
             gsap.fromTo(
                 heading,
@@ -24,14 +24,14 @@ const About = () => {
                     scrollTrigger: {
                         trigger: heading,
                         start: 'top 85%',
-                        toggleActions: 'play reset play reset', // Re-trigger animations
-                        once: false, // Allow animations to repeat
+                        toggleActions: 'play reset play reset',
+                        once: false,
                     },
                 }
             );
         });
 
-        // Animation for sections
+
         sectionRefs.current.forEach((section) => {
             gsap.fromTo(
                 section,
@@ -51,7 +51,7 @@ const About = () => {
             );
         });
 
-        // Staggered animation for contribution cards
+
         cardRefs.current.forEach((card, index) => {
             gsap.fromTo(
                 card,
@@ -102,7 +102,6 @@ const About = () => {
                 </p>
             </section>
 
-            {/* How Users Can Contribute Section */}
             <section
                 ref={(el) => (sectionRefs.current[1] = el)}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-8"
@@ -138,7 +137,7 @@ const About = () => {
                 )}
             </section>
 
-            {/* Final Call to Action */}
+
             <section
                 ref={(el) => (sectionRefs.current[2] = el)}
                 className="text-center mt-12"

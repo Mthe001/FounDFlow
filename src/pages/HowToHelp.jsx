@@ -12,7 +12,7 @@ const HowToHelp = () => {
     const headingRefs = useRef([]);
 
     useEffect(() => {
-        // Animation for headings
+
         headingRefs.current.forEach((heading) => {
             gsap.fromTo(
                 heading,
@@ -31,7 +31,7 @@ const HowToHelp = () => {
             );
         });
 
-        // Animation for sections
+
         sectionRefs.current.forEach((section) => {
             gsap.fromTo(
                 section,
@@ -50,7 +50,7 @@ const HowToHelp = () => {
             );
         });
 
-        // Staggered animation for steps
+
         gsap.fromTo(
             stepRefs.current,
             { opacity: 0, scale: 0.8 },
@@ -68,7 +68,7 @@ const HowToHelp = () => {
             }
         );
 
-        // Animation for divisions
+
         gsap.fromTo(
             divisionRefs.current,
             { opacity: 0, y: 50 },
@@ -89,7 +89,7 @@ const HowToHelp = () => {
 
     return (
         <div className="container mx-auto px-4 py-12 bg-gray-50">
-            {/* Header Section */}
+
             <header
                 ref={(el) => (headingRefs.current[0] = el)}
                 className="text-center mb-12"
@@ -102,7 +102,7 @@ const HowToHelp = () => {
                 </p>
             </header>
 
-            {/* Steps to Donate */}
+
             <section
                 ref={(el) => (sectionRefs.current[0] = el)}
                 className="mb-16"
@@ -136,7 +136,7 @@ const HowToHelp = () => {
                 </div>
             </section>
 
-            {/* Donation Collection Points */}
+
             <section
                 ref={(el) => (sectionRefs.current[1] = el)}
                 className="mb-16"

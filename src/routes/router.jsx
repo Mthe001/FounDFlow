@@ -10,13 +10,12 @@ import Login from '../pages/login';
 import ErrorPage from '../pages/ErrorPage';
 import HomeLayout from '../layouts/HomeLayout';
 import AuthLayout from '../layouts/AuthLayout';
-import PrivateRoute from '../routes/PrivateRoutes';  // Correct path to your PrivateRoute
-import DonationCampaignDetails from '../pages/DonationCampaignDetails';  // Import the new page
-import UpdateProfile from '../components/UpdateProfile';  // Import the UpdateProfile page
+import PrivateRoute from '../routes/PrivateRoutes';
+import DonationCampaignDetails from '../pages/DonationCampaignDetails';
+import UpdateProfile from '../components/UpdateProfile';
 import DonationForm from '../components/DonationForm';
 import ForgetPassword from '../pages/ForgetPassword';
 
-// Define the routes
 const router = createBrowserRouter([
     {
         path: '/',
@@ -92,7 +91,7 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: '*', // Wildcard route for unmatched paths
+        path: '*',
         element: <ErrorPage />,
     },
 ]);

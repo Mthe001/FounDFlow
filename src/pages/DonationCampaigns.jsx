@@ -60,18 +60,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CampaignCard from '../Card/CampaignCard'; // Assuming CampaignCard is the reusable card component
+import CampaignCard from '../Card/CampaignCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DonationCampaigns = () => {
-    const [campaigns, setCampaigns] = useState([]); // State to hold fetched data
-    const [loading, setLoading] = useState(true);   // State for loading indicator
+    const [campaigns, setCampaigns] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const campaignsRef = useRef([]);               // Ref to track campaign cards
+    const campaignsRef = useRef([]);
 
     useEffect(() => {
-        // Fetch campaigns data
+
         const fetchData = async () => {
             try {
                 const response = await fetch('/donate.json');
@@ -92,7 +92,7 @@ const DonationCampaigns = () => {
 
     useEffect(() => {
         if (campaigns.length > 0) {
-            // Add staggered animations for campaign cards
+
             gsap.fromTo(
                 campaignsRef.current,
                 { opacity: 0, y: 50 },
@@ -103,7 +103,7 @@ const DonationCampaigns = () => {
                     stagger: 0.2,
                     ease: 'power2.out',
                     scrollTrigger: {
-                        trigger: '.campaign-grid', // Target container for scroll animation
+                        trigger: '.campaign-grid',
                         start: 'top 75%',
                         toggleActions: 'play none none none',
                     },
@@ -112,7 +112,7 @@ const DonationCampaigns = () => {
         }
     }, [campaigns]);
 
-    // Loading and error handling
+
     if (loading) {
         return <p>Loading campaigns...</p>;
     }
@@ -131,7 +131,7 @@ const DonationCampaigns = () => {
                     campaigns.map((campaign, index) => (
                         <div
                             key={campaign.id}
-                            ref={(el) => (campaignsRef.current[index] = el)} // Attach refs to each card
+                            ref={(el) => (campaignsRef.current[index] = el)}
                         >
                             <CampaignCard campaign={campaign} />
                         </div>

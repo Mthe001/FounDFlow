@@ -8,15 +8,15 @@ import { AuthContext } from '../provider/AuthProvider';
 gsap.registerPlugin(ScrollTrigger);
 
 const Dashboard = () => {
-    const { user } = useContext(AuthContext); // Get the user info from context
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const cardRef = useRef(null); // Ref for the profile card
-    const imageRef = useRef(null); // Ref for the profile image
-    const textRefs = useRef([]); // Ref for profile text elements
+    const cardRef = useRef(null);
+    const imageRef = useRef(null);
+    const textRefs = useRef([]);
 
     useEffect(() => {
-        // Animate the profile card with a fade-in effect
+
         gsap.fromTo(
             cardRef.current,
             { opacity: 0, y: 50 },
@@ -33,7 +33,7 @@ const Dashboard = () => {
             }
         );
 
-        // Animate the profile image separately
+
         gsap.fromTo(
             imageRef.current,
             { scale: 0, opacity: 0 },
@@ -50,7 +50,7 @@ const Dashboard = () => {
             }
         );
 
-        // Stagger animation for text elements
+
         gsap.fromTo(
             textRefs.current,
             { opacity: 0, x: -30 },
@@ -69,12 +69,12 @@ const Dashboard = () => {
         );
     }, []);
 
-    // Redirect to the profile update page
+
     const handleUpdateProfile = () => {
         navigate('/update-profile');
     };
 
-    // If the user is not loaded yet or there's no user, show a loading state
+
     if (!user) {
         return <div>Loading...</div>;
     }
@@ -91,7 +91,7 @@ const Dashboard = () => {
                     Welcome, {displayName}!
                 </h2>
 
-                {/* User Profile Image */}
+
                 {photoURL ? (
                     <img
                         ref={imageRef}
@@ -106,7 +106,7 @@ const Dashboard = () => {
                     ></div>
                 )}
 
-                {/* User Profile Information */}
+
                 <div className="mt-4 text-lg text-gray-700">
                     <p ref={(el) => (textRefs.current[0] = el)}>
                         <strong>Name:</strong> {displayName}
@@ -116,7 +116,7 @@ const Dashboard = () => {
                     </p>
                 </div>
 
-                {/* Update Profile Button */}
+
                 <div
                     ref={(el) => (textRefs.current[2] = el)}
                     className="mt-6 text-center"

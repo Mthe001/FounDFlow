@@ -21,7 +21,7 @@ const HowItWorks = () => {
             setSupportedDivisions(donateData.supportedDivisions);
         }
 
-        // GSAP animations for sections
+
         sectionRefs.current.forEach((section, index) => {
             gsap.fromTo(
                 section,
@@ -41,7 +41,7 @@ const HowItWorks = () => {
             );
         });
 
-        // GSAP animation for the heading
+
         gsap.fromTo(
             headingRef.current,
             { opacity: 0, scale: 0.8 },
@@ -133,7 +133,7 @@ const HowItWorks = () => {
                 ))}
             </section>
 
-            {/* Collection Points Modal */}
+
             {isCollectionModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
@@ -155,7 +155,7 @@ const HowItWorks = () => {
                 </div>
             )}
 
-            {/* Supported Divisions Modal */}
+
             {isDivisionModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">

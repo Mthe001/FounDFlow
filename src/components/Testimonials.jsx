@@ -32,7 +32,7 @@ const Testimonials = () => {
     const headingRef = useRef(null);
 
     useEffect(() => {
-        // GSAP animation for heading
+
         gsap.fromTo(
             headingRef.current,
             { opacity: 0, y: -50 },
@@ -44,12 +44,12 @@ const Testimonials = () => {
                 scrollTrigger: {
                     trigger: headingRef.current,
                     start: 'top 85%',
-                    toggleActions: 'restart none none none', // Restart every time it's scrolled into view
+                    toggleActions: 'restart none none none',
                 },
             }
         );
 
-        // GSAP animation for cards
+
         cardRefs.current.forEach((card, index) => {
             ScrollTrigger.create({
                 trigger: card,
@@ -62,13 +62,13 @@ const Testimonials = () => {
                             opacity: 1,
                             scale: 1,
                             duration: 1,
-                            delay: index * 0.2, // Stagger effect
+                            delay: index * 0.2,
                             ease: 'elastic.out(1, 0.5)',
                         }
                     );
                 },
                 onLeaveBack: () => {
-                    gsap.set(card, { opacity: 0, scale: 0.8 }); // Reset styles when scrolling back
+                    gsap.set(card, { opacity: 0, scale: 0.8 });
                 },
             });
         });

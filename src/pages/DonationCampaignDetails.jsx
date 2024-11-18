@@ -34,20 +34,19 @@ const DonationCampaignDetails = () => {
     return (
         <div className="p-6">
             <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto">
-                {/* Campaign Title */}
+
                 <h2 className="text-3xl font-bold text-center">{campaign.title}</h2>
 
-                {/* Campaign Image */}
+
                 <img
                     src={campaign.image}
                     alt={campaign.title}
                     className="w-full md:h-72 h-48 lg:h-96 object-cover rounded-md mt-4"
                 />
 
-                {/* Campaign Description */}
                 <p className="text-lg text-gray-700 mt-4">{campaign.description}</p>
 
-                {/* Campaign Status, Contact, and Division */}
+
                 <div className="mt-4">
                     <p><strong>Status:</strong> {campaign.status}</p>
                     <p><strong>Contact:</strong> {campaign.contactInfo}</p>
@@ -55,7 +54,7 @@ const DonationCampaignDetails = () => {
                 </div>
             </div>
 
-            {/* Donate Now and Back Buttons */}
+
             <div className="flex justify-center gap-4 mt-6">
                 <PrivateRoute>
                     <button

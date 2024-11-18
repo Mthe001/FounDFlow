@@ -49,7 +49,6 @@ const Register = () => {
             toast.success("Registration successful!");
 
 
-            console.log("User info:", { name, email, password, photoUrl });
 
             navigate("/");
         } catch (error) {
@@ -123,9 +122,9 @@ const Register = () => {
                                 onClick={togglePasswordVisibility}
                             >
                                 {passwordVisible ? (
-                                    <FiEyeOff className="h-5 w-5" /> // Eye-off icon when password is visible
+                                    <FiEyeOff className="h-5 w-5" />
                                 ) : (
-                                    <FiEye className="h-5 w-5" /> // Eye icon when password is hidden
+                                    <FiEye className="h-5 w-5" />
                                 )}
                             </button>
                         )}

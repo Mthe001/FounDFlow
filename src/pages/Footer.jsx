@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="bg-gradient-to-r from-gray-700 via-indigo-800 to-zinc-900 text-gray-300 p-10">
             <div className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-3">
-                {/* Contact Information */}
+
                 <div className="space-y-4">
                     <h5 className="text-xl font-bold text-white">Contact Me</h5>
                     <p>
@@ -17,7 +17,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Social Media Links */}
+
                 <div className="text-center space-y-4">
                     <h5 className="text-xl font-bold text-white">Follow Me</h5>
                     <nav className="flex justify-center space-x-6">
