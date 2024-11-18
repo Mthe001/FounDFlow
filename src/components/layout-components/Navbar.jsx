@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const renderUserInfo = () => {
         if (user && user.email) {
-            // If user is logged in, render photo and name or email
+
             return (
                 <div className="flex items-center gap-2">
                     <img
@@ -55,7 +55,7 @@ const Navbar = () => {
 
     return (
         <div className="navbar bg-base-100">
-            {/* Navbar Start Section (Mobile View Dropdown) */}
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <Link to='/' className="btn btn-ghost text-xl">For Humanity</Link>
             </div>
 
-            {/* Navbar Links for Large Screens */}
+
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 space-x-4">
                     <li>
@@ -117,10 +117,10 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            {/* Navbar End Section: User Profile & Login/Logout */}
+
             <div className="navbar-end flex items-center space-x-4">
-                {renderUserInfo()}  {/* Dynamically renders user info or guest info */}
-                {renderLoginButton()}  {/* Dynamically renders Login/Logout button */}
+                {renderUserInfo()}
+                {renderLoginButton()}
             </div>
         </div>
     );
