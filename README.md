@@ -58,5 +58,5 @@ To run the project locally, follow these steps:
 
 ### 1. Clone the Repository:
 ```bash
-git clone https://github.com/your-repo-url.git
+git clone https://github.com/programming-hero-web-course1/b10-a9-authentication-Mthe001
 cd donation-management-system
