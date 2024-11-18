@@ -1,7 +1,7 @@
 
 
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
@@ -31,12 +31,12 @@ const Navbar = () => {
                 </div>
             );
         } else {
-            // If no user is logged in, show placeholder image
+
             return <img className="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Guest" />;
         }
     };
 
-    // Render login/logout button dynamically
+
     const renderLoginButton = () => {
         if (isLoggedIn) {
             return (
@@ -94,7 +94,7 @@ const Navbar = () => {
                         )}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Winter-Valley</a>
+                <Link to='/' className="btn btn-ghost text-xl">For Humanity</Link>
             </div>
 
             {/* Navbar Links for Large Screens */}

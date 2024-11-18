@@ -6,7 +6,7 @@ import DonationCampaigns from '../pages/DonationCampaigns';
 import HowToHelp from '../pages/HowToHelp';
 import Dashboard from '../pages/Dashboard';
 import Register from '../pages/Register';
-import Login from '../pages/Login';
+import Login from '../pages/login';
 import ErrorPage from '../pages/ErrorPage';
 import HomeLayout from '../layouts/HomeLayout';
 import AuthLayout from '../layouts/AuthLayout';
@@ -14,6 +14,7 @@ import PrivateRoute from '../routes/PrivateRoutes';  // Correct path to your Pri
 import DonationCampaignDetails from '../pages/DonationCampaignDetails';  // Import the new page
 import UpdateProfile from '../components/UpdateProfile';  // Import the UpdateProfile page
 import DonationForm from '../components/DonationForm';
+import ForgetPassword from '../pages/ForgetPassword';
 
 // Define the routes
 const router = createBrowserRouter([
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
             {
                 path: '/auth/register',
                 element: <Register />,
+            },
+            {
+                path: '/auth/forget-password',
+                element: <ForgetPassword />,
             },
         ],
     },
