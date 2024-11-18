@@ -81,11 +81,18 @@ const Navbar = () => {
                         <li>
                             <NavLink to="/" className="block px-4 py-2">Home</NavLink>
                         </li>
+
                         <li>
                             <NavLink to="/donation-campaigns" className="block px-4 py-2">Donation Campaigns</NavLink>
                         </li>
                         <li>
                             <NavLink to="/how-to-help" className="block px-4 py-2">How to Help</NavLink>
+                        </li>
+
+                        {/* add extra route-to related */}
+
+                        <li>
+                            <NavLink to="/our-mission" className="block px-4 py-2">Our Mission</NavLink>
                         </li>
                         {user && user.email && (
                             <li>
@@ -108,6 +115,10 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to="/how-to-help" className="text-gray-700 hover:text-blue-500 transition duration-300">How to Help</NavLink>
+                    </li>
+                    {/* add extra route-to related */}
+                    <li>
+                        <NavLink to="/our-mission" className="block px-4 py-2">Our Mission</NavLink>
                     </li>
                     {user && user.email && (
                         <li>
