@@ -2,47 +2,125 @@ import React from 'react';
 
 const HowToHelp = () => {
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-center mb-8">How You Can Help</h1>
+        <div className="container mx-auto px-4 py-12 bg-gray-50">
+            {/* Header Section */}
+            <header className="text-center mb-12">
+                <h1 className="text-5xl font-extrabold text-gray-800 leading-tight">
+                    <span className="text-indigo-600">How You Can Help</span>
+                </h1>
+                <p className="mt-4 text-lg text-gray-600">
+                    Make a difference by supporting campaigns and contributing to causes close to your heart.
+                </p>
+            </header>
 
-            {/* Instructions for Donation */}
-            <section className="mb-12">
-                <h2 className="text-2xl font-semibold mb-4">Steps to Donate</h2>
-                <ol className="list-decimal pl-6">
-                    <li className="mb-2">Choose a campaign or division to support.</li>
-                    <li className="mb-2">Select the donation amount or items you want to contribute.</li>
-                    <li className="mb-2">Pick your preferred method of donation (Online, Bank Transfer, or Collection Points).</li>
-                    <li className="mb-2">Fill out the donation form with your details (if required).</li>
-                    <li className="mb-2">Confirm your donation and submit it. You will receive a confirmation email.</li>
-                    <li className="mb-2">Track the progress of your donation on our website or through email updates.</li>
-                </ol>
+            {/* Steps to Donate */}
+            <section className="mb-16">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+                    Steps to Donate
+                </h2>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {[
+                        "Choose a campaign or division to support.",
+                        "Select the donation amount or items you want to contribute.",
+                        "Pick your preferred method of donation (Online, Bank Transfer, or Collection Points).",
+                        "Fill out the donation form with your details (if required).",
+                        "Confirm your donation and submit it. You will receive a confirmation email.",
+                        "Track the progress of your donation on our website or through email updates.",
+                    ].map((step, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center p-4 bg-white shadow-md rounded-md hover:shadow-lg transition-all"
+                        >
+                            <span className="text-indigo-600 text-lg font-bold mr-4">
+                                {index + 1}.
+                            </span>
+                            <p className="text-gray-700">{step}</p>
+                        </div>
+                    ))}
+                </div>
             </section>
 
-            {/* Collection Points */}
-            <section className="mb-12">
-                <h2 className="text-2xl font-semibold mb-4">Donation Collection Points</h2>
-                <p>If you prefer to donate in person, you can visit the following collection points:</p>
-                <ul className="list-disc pl-6">
-                    <li className="mb-2">Local Donation Centers (City Name)</li>
-                    <li className="mb-2">Community Centers (Location Name)</li>
-                    <li className="mb-2">Participating Stores (Store Name)</li>
-                    <li className="mb-2">Partner Organizations (Organization Name)</li>
-                </ul>
-                <p>For more details on how to find a collection point near you, please contact us at <span className="font-semibold">support@donate.org</span>.</p>
+            {/* Donation Collection Points */}
+            <section className="mb-16">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+                    Donation Collection Points
+                </h2>
+                <p className="text-center text-gray-600 mb-8">
+                    If you prefer to donate in person, visit one of our collection points:
+                </p>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    {[
+                        "Local Donation Centers (City Name)",
+                        "Community Centers (Location Name)",
+                        "Participating Stores (Store Name)",
+                        "Partner Organizations (Organization Name)",
+                    ].map((point, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center p-4 bg-white shadow-md rounded-md hover:shadow-lg transition-all"
+                        >
+                            <p className="text-gray-700">{point}</p>
+                        </div>
+                    ))}
+                </div>
+                <p className="text-center mt-6 text-gray-600">
+                    For more details, contact us at{" "}
+                    <span className="text-indigo-600 font-semibold">
+                        <a href="https://sparbd.org/winter-special/">Spar Bd</a>
+                    </span>
+                </p>
             </section>
 
             {/* Supported Divisions */}
             <section>
-                <h2 className="text-2xl font-semibold mb-4">Supported Divisions</h2>
-                <p>Your donation can support various causes. Here are the divisions we currently support:</p>
-                <ul className="list-disc pl-6">
-                    <li className="mb-2">Education: Supporting underprivileged children with school supplies and scholarships.</li>
-                    <li className="mb-2">Healthcare: Providing medical aid and healthcare services to underserved communities.</li>
-                    <li className="mb-2">Environment: Promoting environmental sustainability through various eco-projects.</li>
-                    <li className="mb-2">Poverty Relief: Offering food, shelter, and other basic necessities to those in need.</li>
-                    <li className="mb-2">Disaster Relief: Assisting victims of natural disasters with essential resources and support.</li>
-                </ul>
-                <p>You can choose a specific division to donate to or support our general fund, which contributes to all divisions.</p>
+                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+                    Supported Divisions
+                </h2>
+                <p className="text-center text-gray-600 mb-8">
+                    Your contributions can support these essential causes:
+                </p>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {[
+                        {
+                            title: "Education",
+                            description:
+                                "Supporting underprivileged children with school supplies and scholarships.",
+                        },
+                        {
+                            title: "Healthcare",
+                            description:
+                                "Providing medical aid and healthcare services to underserved communities.",
+                        },
+                        {
+                            title: "Environment",
+                            description:
+                                "Promoting environmental sustainability through various eco-projects.",
+                        },
+                        {
+                            title: "Poverty Relief",
+                            description:
+                                "Offering food, shelter, and other basic necessities to those in need.",
+                        },
+                        {
+                            title: "Disaster Relief",
+                            description:
+                                "Assisting victims of natural disasters with essential resources and support.",
+                        },
+                    ].map((division, index) => (
+                        <div
+                            key={index}
+                            className="p-6 bg-white shadow-md rounded-md hover:shadow-lg transition-all"
+                        >
+                            <h3 className="text-xl font-bold text-indigo-600 mb-2">
+                                {division.title}
+                            </h3>
+                            <p className="text-gray-700">{division.description}</p>
+                        </div>
+                    ))}
+                </div>
+                <p className="text-center mt-6 text-gray-600">
+                    Choose a division or support our general fund to contribute across all causes.
+                </p>
             </section>
         </div>
     );

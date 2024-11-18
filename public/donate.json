@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Support Education for All",
-    "image": "https://example.com/images/education_campaign.jpg",
+    "image": "https://images.pexels.com/photos/1595392/pexels-photo-1595392.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Providing school supplies and scholarships to underprivileged children.",
     "status": "Active",
     "contactInfo": "education@donate.org",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "title": "Healthcare Access Initiative",
-    "image": "https://example.com/images/healthcare_campaign.jpg",
+    "image": "https://images.pexels.com/photos/7475690/pexels-photo-7475690.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Raising funds for medical camps in rural areas.",
     "status": "Active",
     "contactInfo": "healthcare@donate.org",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "title": "Clean Water for Communities",
-    "image": "https://example.com/images/water_campaign.jpg",
+    "image": "https://images.pexels.com/photos/13613219/pexels-photo-13613219.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Installing water filtration systems in villages.",
     "status": "Completed",
     "contactInfo": "water@donate.org",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "title": "Disaster Relief Fund",
-    "image": "https://example.com/images/disaster_campaign.jpg",
+    "image": "https://images.pexels.com/photos/16105750/pexels-photo-16105750/free-photo-of-urban-ruins-after-earthquake.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Immediate aid for families affected by natural disasters.",
     "status": "Active",
     "contactInfo": "relief@donate.org",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "title": "Wildlife Conservation Efforts",
-    "image": "https://example.com/images/wildlife_campaign.jpg",
+    "image": "https://images.pexels.com/photos/5486958/pexels-photo-5486958.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Protecting endangered species through habitat preservation.",
     "status": "Active",
     "contactInfo": "wildlife@donate.org",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "title": "Community Housing Project",
-    "image": "https://example.com/images/housing_campaign.jpg",
+    "image": "https://images.pexels.com/photos/8264126/pexels-photo-8264126.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Building affordable housing for low-income families.",
     "status": "Upcoming",
     "contactInfo": "housing@donate.org",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "title": "Mental Health Awareness Drive",
-    "image": "https://example.com/images/mental_health_campaign.jpg",
+    "image": "https://images.pexels.com/photos/5710972/pexels-photo-5710972.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Organizing workshops and support groups for mental health.",
     "status": "Active",
     "contactInfo": "mentalhealth@donate.org",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "title": "Green Energy Promotion",
-    "image": "https://example.com/images/green_energy_campaign.jpg",
+    "image": "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Encouraging the use of solar and wind energy in urban areas.",
     "status": "Upcoming",
     "contactInfo": "energy@donate.org",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "title": "Nutrition for All",
-    "image": "https://example.com/images/nutrition_campaign.jpg",
+    "image": "https://images.pexels.com/photos/29401632/pexels-photo-29401632/free-photo-of-colorful-exotic-fruits-at-local-market.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Providing meals to children in underserved communities.",
     "status": "Completed",
     "contactInfo": "nutrition@donate.org",
@@ -110,13 +110,36 @@
   {
     "id": 10,
     "title": "Empower Women Initiative",
-    "image": "https://example.com/images/women_empowerment_campaign.jpg",
+    "image": "https://images.pexels.com/photos/6995127/pexels-photo-6995127.jpeg?auto=compress&cs=tinysrgb&w=600",
     "description": "Skills training and financial aid for women entrepreneurs.",
     "status": "Active",
     "contactInfo": "women@donate.org",
     "division": "Community Development",
     "supportDivision": [
       { "name": "Women's Empowerment", "description": "Support women through education, training, and financial assistance." }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Winter Support for the Poor",
+    "image": "https://media.istockphoto.com/id/856564654/photo/donation-box-with-clothes.jpg?s=612x612&w=0&k=20&c=wd2TfIydgFL-K_WU40LoYtgIoE8y-N2OPA1SU_klnXY=",
+    "description": "Providing blankets, warm clothes, and heating arrangements to those in need during winter.",
+    "status": "Active",
+    "contactInfo": "winterhelp@donate.org",
+    "division": "Emergency Response",
+    "supportDivision": [
+      {
+        "name": "Winter Clothing Drive",
+        "description": "Donate coats, scarves, and gloves to help individuals stay warm."
+      },
+      {
+        "name": "Blanket Distribution",
+        "description": "Provide warm blankets to protect from harsh weather."
+      },
+      {
+        "name": "Heating Assistance",
+        "description": "Support heating supplies or financial aid for heating costs."
+      }
     ]
   }
 ]

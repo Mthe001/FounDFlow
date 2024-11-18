@@ -1,3 +1,4 @@
+// src/provider/AuthProvider.js
 import React, { createContext, useState, useEffect } from 'react';
 import {
     getAuth,
@@ -44,12 +45,23 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe();
     }, []);
 
-    const fetchSignInMethods = async (email) => {
+    const updateUserProfile = async (updatedProfile) => {
         try {
-            const methods = await fetchSignInMethodsForEmail(auth, email);
-            return methods;
+            const currentUser = auth.currentUser;
+            if (currentUser) {
+                await updateProfile(currentUser, {
+                    displayName: updatedProfile.displayName,
+                    photoURL: updatedProfile.photoURL,
+                });
+                // Update the user state with the new profile data
+                setUser({
+                    ...user,
+                    displayName: updatedProfile.displayName,
+                    photoURL: updatedProfile.photoURL,
+                });
+            }
         } catch (error) {
-            throw new Error(error.message);
+            console.error("Error updating profile:", error.message);
         }
     };
 
@@ -128,6 +140,7 @@ const AuthProvider = ({ children }) => {
         signInWithGoogle,
         sendPasswordReset,
         logOut,
+        updateUserProfile,
         loading,
     };
 
