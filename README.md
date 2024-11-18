@@ -4,15 +4,13 @@
 The Donation Management System is a platform designed to connect donors with individuals in need. It enables users to view donation campaigns, contribute items, and manage their profiles in a simple and intuitive way.
 
 ---
- 
 
-![Winter Valley Home Preview](https://i.ibb.co.com/R9TdDqw/web-home.png)
+![Winter Valley Home Preview](https://i.ibb.co/R9TdDqw/web-home.png)
 
-
+---
 
 ## **Live URL**
-Access the live application here: [Still working](#)  
-
+Access the live application here: [Still working](#)
 
 ---
 
