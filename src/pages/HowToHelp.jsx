@@ -1,10 +1,99 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HowToHelp = () => {
+    const sectionRefs = useRef([]);
+    const stepRefs = useRef([]);
+    const divisionRefs = useRef([]);
+    const headingRefs = useRef([]);
+
+    useEffect(() => {
+        // Animation for headings
+        headingRefs.current.forEach((heading) => {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: -30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: 'top 85%',
+                        toggleActions: 'play reset play reset',
+                    },
+                }
+            );
+        });
+
+        // Animation for sections
+        sectionRefs.current.forEach((section) => {
+            gsap.fromTo(
+                section,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 90%',
+                        toggleActions: 'play reset play reset',
+                    },
+                }
+            );
+        });
+
+        // Staggered animation for steps
+        gsap.fromTo(
+            stepRefs.current,
+            { opacity: 0, scale: 0.8 },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: stepRefs.current[0]?.parentNode,
+                    start: 'top 90%',
+                    toggleActions: 'play reset play reset',
+                },
+            }
+        );
+
+        // Animation for divisions
+        gsap.fromTo(
+            divisionRefs.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.3,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: divisionRefs.current[0]?.parentNode,
+                    start: 'top 90%',
+                    toggleActions: 'play reset play reset',
+                },
+            }
+        );
+    }, []);
+
     return (
         <div className="container mx-auto px-4 py-12 bg-gray-50">
             {/* Header Section */}
-            <header className="text-center mb-12">
+            <header
+                ref={(el) => (headingRefs.current[0] = el)}
+                className="text-center mb-12"
+            >
                 <h1 className="text-5xl font-extrabold text-gray-800 leading-tight">
                     <span className="text-indigo-600">How You Can Help</span>
                 </h1>
@@ -14,8 +103,14 @@ const HowToHelp = () => {
             </header>
 
             {/* Steps to Donate */}
-            <section className="mb-16">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+            <section
+                ref={(el) => (sectionRefs.current[0] = el)}
+                className="mb-16"
+            >
+                <h2
+                    ref={(el) => (headingRefs.current[1] = el)}
+                    className="text-3xl font-semibold text-gray-800 mb-6 text-center"
+                >
                     Steps to Donate
                 </h2>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -29,6 +124,7 @@ const HowToHelp = () => {
                     ].map((step, index) => (
                         <div
                             key={index}
+                            ref={(el) => (stepRefs.current[index] = el)}
                             className="flex items-center p-4 bg-white shadow-md rounded-md hover:shadow-lg transition-all"
                         >
                             <span className="text-indigo-600 text-lg font-bold mr-4">
@@ -41,8 +137,14 @@ const HowToHelp = () => {
             </section>
 
             {/* Donation Collection Points */}
-            <section className="mb-16">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+            <section
+                ref={(el) => (sectionRefs.current[1] = el)}
+                className="mb-16"
+            >
+                <h2
+                    ref={(el) => (headingRefs.current[2] = el)}
+                    className="text-3xl font-semibold text-gray-800 mb-6 text-center"
+                >
                     Donation Collection Points
                 </h2>
                 <p className="text-center text-gray-600 mb-8">
@@ -72,8 +174,13 @@ const HowToHelp = () => {
             </section>
 
             {/* Supported Divisions */}
-            <section>
-                <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+            <section
+                ref={(el) => (sectionRefs.current[2] = el)}
+            >
+                <h2
+                    ref={(el) => (headingRefs.current[3] = el)}
+                    className="text-3xl font-semibold text-gray-800 mb-6 text-center"
+                >
                     Supported Divisions
                 </h2>
                 <p className="text-center text-gray-600 mb-8">
@@ -109,6 +216,7 @@ const HowToHelp = () => {
                     ].map((division, index) => (
                         <div
                             key={index}
+                            ref={(el) => (divisionRefs.current[index] = el)}
                             className="p-6 bg-white shadow-md rounded-md hover:shadow-lg transition-all"
                         >
                             <h3 className="text-xl font-bold text-indigo-600 mb-2">
