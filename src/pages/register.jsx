@@ -14,13 +14,12 @@ const Register = () => {
     const { signUp } = useContext(AuthContext);
     const navigate = useNavigate();
 
-
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-
-    const passwordValidationRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // Updated regex to allow special characters #$%
+    const passwordValidationRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&()_+\-=\[\]{};:'",.<>\/\\|`~^# ]{8,}$/;
 
 
     const handleRegister = async (e) => {
@@ -35,21 +34,16 @@ const Register = () => {
             return;
         }
 
-
         if (!passwordValidationRegex.test(password)) {
             toast.error(
-                "Password must contain at least one uppercase letter, one lowercase letter, and one number, and be at least 8 characters long."
+                "Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long, and can include special characters like #$%."
             );
             return;
         }
 
         try {
-
             await signUp(email, password, name, photoUrl);
             toast.success("Registration successful!");
-
-
-
             navigate("/");
         } catch (error) {
             setError(error.message);
