@@ -89,10 +89,9 @@ const Navbar = () => {
                             <NavLink to="/how-to-help" className="block px-4 py-2">How to Help</NavLink>
                         </li>
 
-                        {/* add extra route-to related */}
 
                         <li>
-                            <NavLink to="/our-mission" className="block px-4 py-2">Our Mission</NavLink>
+                            <NavLink to="/our-mission" className="block px-4 py-2">Our Focus</NavLink>
                         </li>
                         {user && user.email && (
                             <li>
@@ -118,7 +117,7 @@ const Navbar = () => {
                     </li>
                     {/* add extra route-to related */}
                     <li>
-                        <NavLink to="/our-mission" className="block px-4 py-2">Our Mission</NavLink>
+                        <NavLink to="/our-mission" className="block px-4 py-2">Our Focus</NavLink>
                     </li>
                     {user && user.email && (
                         <li>
