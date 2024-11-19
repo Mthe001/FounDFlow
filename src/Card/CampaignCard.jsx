@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CampaignCard = ({ campaign }) => {
-    const { title, image, description, status, contactInfo, division, id } = campaign; // Ensure campaign has an 
+    const { title, image, description, status, contactInfo, division, id } = campaign;
     const navigate = useNavigate();
 
     const handleViewDetails = () => {
