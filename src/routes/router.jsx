@@ -13,7 +13,7 @@ import AuthLayout from '../layouts/AuthLayout';
 import PrivateRoute from '../routes/PrivateRoutes';
 import DonationCampaignDetails from '../pages/DonationCampaignDetails';
 import UpdateProfile from '../components/UpdateProfile';
-import DonationForm from '../components/DonationForm';
+
 import ForgetPassword from '../pages/ForgetPassword';
 import OurMisstion from '../pages/OurMisstion';
 
@@ -39,14 +39,6 @@ const router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <DonationCampaignDetails />
-                    </PrivateRoute>
-                ),
-            },
-            {
-                path: '/donation-form',
-                element: (
-                    <PrivateRoute>
-                        <DonationForm />
                     </PrivateRoute>
                 ),
             },

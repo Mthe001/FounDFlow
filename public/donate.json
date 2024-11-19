@@ -6,11 +6,19 @@
     "description": "Collecting and distributing coats, scarves, and gloves to help individuals stay warm.",
     "status": "Active",
     "contactInfo": "clothingdrive@donate.org",
-    "division": "Community Support",
+    "division": "Dhaka",
+    "locations": ["Dhanmondi", "Uttara", "Gulshan"],
+    "allowedItemTypes": ["Coats", "Scarves", "Gloves"],
     "supportDivision": [
       { "name": "Coat Distribution", "description": "Distribute winter coats to families in need." },
       { "name": "Accessory Aid", "description": "Provide scarves, socks, and gloves for additional warmth." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 2 jackets, 3 blankets)",
+      "itemType": "Choose item type: Coats, Scarves, Gloves",
+      "pickupLocation": "Select pickup location: Dhanmondi, Uttara, Gulshan",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 2,
@@ -19,10 +27,18 @@
     "description": "Providing warm blankets to protect from cold nights in rural areas.",
     "status": "Active",
     "contactInfo": "blankets@donate.org",
-    "division": "Emergency Response",
+    "division": "Chattogram",
+    "locations": ["Cox's Bazar", "Rangamati", "Chattogram City"],
+    "allowedItemTypes": ["Blankets"],
     "supportDivision": [
       { "name": "Blanket Relief", "description": "Ensure every household has at least one warm blanket." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 3 blankets)",
+      "itemType": "Choose item type: Blankets",
+      "pickupLocation": "Select pickup location: Cox's Bazar, Rangamati, Chattogram City",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 3,
@@ -31,10 +47,18 @@
     "description": "Delivering jackets, sweaters, and hats to children in underserved areas.",
     "status": "Active",
     "contactInfo": "kidswinter@donate.org",
-    "division": "Community Support",
+    "division": "Khulna",
+    "locations": ["Jessore", "Satkhira", "Khulna City"],
+    "allowedItemTypes": ["Jackets", "Sweaters", "Hats"],
     "supportDivision": [
       { "name": "Children's Winter Aid", "description": "Provide winter clothes for vulnerable children." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 4 jackets, 2 sweaters)",
+      "itemType": "Choose item type: Jackets, Sweaters, Hats",
+      "pickupLocation": "Select pickup location: Jessore, Satkhira, Khulna City",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 4,
@@ -43,10 +67,18 @@
     "description": "Fundraising for immediate distribution of winter essentials.",
     "status": "Active",
     "contactInfo": "relief@donate.org",
-    "division": "Emergency Response",
+    "division": "Sylhet",
+    "locations": ["Sylhet City", "Habiganj", "Moulvibazar"],
+    "allowedItemTypes": ["Blankets", "Winter Clothes", "Food Supplies"],
     "supportDivision": [
       { "name": "Relief Kits", "description": "Includes blankets, winter clothes, and food supplies." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 3 blankets, 5 food supplies)",
+      "itemType": "Choose item type: Blankets, Winter Clothes, Food Supplies",
+      "pickupLocation": "Select pickup location: Sylhet City, Habiganj, Moulvibazar",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 5,
@@ -55,10 +87,18 @@
     "description": "Providing heating materials like firewood or portable heaters for poor families.",
     "status": "Active",
     "contactInfo": "heating@donate.org",
-    "division": "Community Support",
+    "division": "Barishal",
+    "locations": ["Barishal City", "Bhola", "Pirojpur"],
+    "allowedItemTypes": ["Firewood", "Portable Heaters"],
     "supportDivision": [
       { "name": "Heating Solutions", "description": "Deliver heating equipment or financial support for fuel." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 3 heaters, 5 kg firewood)",
+      "itemType": "Choose item type: Firewood, Portable Heaters",
+      "pickupLocation": "Select pickup location: Barishal City, Bhola, Pirojpur",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 6,
@@ -67,10 +107,18 @@
     "description": "Providing socks, gloves, and woolen caps to those in need.",
     "status": "Active",
     "contactInfo": "accessories@donate.org",
-    "division": "Community Support",
+    "division": "Rajshahi",
+    "locations": ["Rajshahi City", "Bogura", "Natore"],
+    "allowedItemTypes": ["Socks", "Gloves", "Woolen Caps"],
     "supportDivision": [
       { "name": "Essential Accessories", "description": "Distribute winter accessories to the elderly and children." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 5 woolen caps, 3 gloves)",
+      "itemType": "Choose item type: Socks, Gloves, Woolen Caps",
+      "pickupLocation": "Select pickup location: Rajshahi City, Bogura, Natore",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   },
   {
     "id": 7,
@@ -79,33 +127,17 @@
     "description": "Focusing on homeless populations in urban areas to provide warm clothing.",
     "status": "Active",
     "contactInfo": "urbanhelp@donate.org",
-    "division": "Emergency Response",
+    "division": "Rangpur",
+    "locations": ["Rangpur City", "Gaibandha", "Dinajpur"],
+    "allowedItemTypes": ["Coats", "Blankets"],
     "supportDivision": [
       { "name": "Homeless Outreach", "description": "Deliver coats and blankets to homeless individuals in cities." }
-    ]
-  },
-  {
-    "id": 8,
-    "title": "Community Winter Shelter Support",
-    "image": "https://i.ibb.co.com/Jjk5mr0/winter-shelter.png",
-    "description": "Setting up and equipping community shelters with winter necessities.",
-    "status": "Upcoming",
-    "contactInfo": "shelters@donate.org",
-    "division": "Community Development",
-    "supportDivision": [
-      { "name": "Shelter Supplies", "description": "Provide blankets and winter clothes for shelter residents." }
-    ]
-  },
-  {
-    "id": 9,
-    "title": "Winter Supplies for Women",
-    "image": "https://i.ibb.co.com/vqRVDWp/winter-women.png",
-    "description": "Supporting single mothers and women with winter essentials.",
-    "status": "Active",
-    "contactInfo": "womenwinter@donate.org",
-    "division": "Community Support",
-    "supportDivision": [
-      { "name": "Women's Aid", "description": "Provide warm clothing and blankets for women-led households." }
-    ]
+    ],
+    "donationFormFields": {
+      "quantity": "Number of items (e.g., 3 coats, 2 blankets)",
+      "itemType": "Choose item type: Coats, Blankets",
+      "pickupLocation": "Select pickup location: Rangpur City, Gaibandha, Dinajpur",
+      "additionalNotes": "Enter any specific instructions (optional)"
+    }
   }
 ]
