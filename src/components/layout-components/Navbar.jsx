@@ -3,6 +3,8 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { LuLogIn } from 'react-icons/lu';
+import { CiLogout } from 'react-icons/ci';
 
 const Navbar = () => {
     const { user, isLoggedIn, logOut } = useContext(AuthContext);
@@ -40,14 +42,14 @@ const Navbar = () => {
     const renderLoginButton = () => {
         if (isLoggedIn) {
             return (
-                <button onClick={handleLogout} className="btn btn-primary">
-                    Logout
+                <button onClick={handleLogout} className="btn btn-ghost border border-gray-500">
+                    <CiLogout />     Logout
                 </button>
             );
         } else {
             return (
-                <NavLink to="/auth/login" className="btn btn-primary">
-                    Login
+                <NavLink to="/auth/login" className="btn btn-ghost border border-gray-500">
+                    <LuLogIn />  Login
                 </NavLink>
             );
         }
