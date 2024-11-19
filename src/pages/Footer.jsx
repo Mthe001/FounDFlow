@@ -22,7 +22,7 @@ const Footer = () => {
                     <h5 className="text-xl font-bold text-white">Follow Me</h5>
                     <nav className="flex justify-center space-x-6">
                         <a
-                            href="https://twitter.com"
+                            href="https://x.com/redwan_mahin68"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-blue-400 transition duration-300">
@@ -50,7 +50,7 @@ const Footer = () => {
                             </svg>
                         </a>
                         <a
-                            href="https://facebook.com"
+                            href="https://www.facebook.com/mtheredwan"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-blue-700 transition duration-300">

@@ -15,6 +15,7 @@ import DonationCampaignDetails from '../pages/DonationCampaignDetails';
 import UpdateProfile from '../components/UpdateProfile';
 import DonationForm from '../components/DonationForm';
 import ForgetPassword from '../pages/ForgetPassword';
+import OurMisstion from '../pages/OurMisstion';
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: '/how-to-help',
                 element: <HowToHelp />,
+            },
+            {
+                path: '/our-mission',
+                element: <OurMisstion />,
             },
             {
                 path: '/dashboard',
