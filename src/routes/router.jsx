@@ -13,7 +13,6 @@ import AuthLayout from '../layouts/AuthLayout';
 import PrivateRoute from '../routes/PrivateRoutes';
 import DonationCampaignDetails from '../pages/DonationCampaignDetails';
 import UpdateProfile from '../components/UpdateProfile';
-
 import ForgetPassword from '../pages/ForgetPassword';
 import OurMisstion from '../pages/OurMisstion';
 
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
                 element: <HowToHelp />,
             },
             {
-                path: '/our-mission',
+                path: '/our-focus',
                 element: <OurMisstion />,
             },
             {
