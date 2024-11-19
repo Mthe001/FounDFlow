@@ -23,7 +23,7 @@ const OurMission = () => {
                 {/* Image Section */}
                 <div className="image-section flex-1 opacity-0">
                     <img
-                        src="https://media.istockphoto.com/id/856564654/photo/donation-box-with-clothes.jpg?s=612x612&w=0&k=20&c=wd2TfIydgFL-K_WU40LoYtgIoE8y-N2OPA1SU_klnXY="
+                        src="https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=300"
                         alt="Our Mission - Donation"
                         className="w-full rounded-lg shadow-lg"
                     />
@@ -59,7 +59,7 @@ const OurMission = () => {
                 {/* Image Section */}
                 <div className="image-section flex-1 opacity-0">
                     <img
-                        src="https://media.istockphoto.com/id/856564654/photo/donation-box-with-clothes.jpg?s=612x612&w=0&k=20&c=wd2TfIydgFL-K_WU40LoYtgIoE8y-N2OPA1SU_klnXY="
+                        src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=300"
                         alt="Why We Do It - Winter Donation"
                         className="w-full rounded-lg shadow-lg"
                     />
@@ -72,7 +72,7 @@ const OurMission = () => {
                 {/* Image Section */}
                 <div className="image-section flex-1 opacity-0">
                     <img
-                        src="https://media.istockphoto.com/id/856564654/photo/donation-box-with-clothes.jpg?s=612x612&w=0&k=20&c=wd2TfIydgFL-K_WU40LoYtgIoE8y-N2OPA1SU_klnXY="
+                        src="https://images.pexels.com/photos/1198171/pexels-photo-1198171.jpeg?auto=compress&cs=tinysrgb&w=300"
                         alt="Join Us in Making a Difference"
                         className="w-full rounded-lg shadow-lg"
                     />
