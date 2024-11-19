@@ -1,4 +1,4 @@
-# **FounFlow**
+# **FounDFlow**
 
 ## **Purpose**
 The Donation Management System is a platform designed to connect donors with individuals in need. It enables users to view donation campaigns, contribute items, and manage their profiles in a simple and intuitive way.
