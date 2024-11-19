@@ -102,7 +102,7 @@ const Navbar = () => {
                         )}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">For Humanity</Link>
+                <Link to='/' className="btn btn-ghost text-xl">FundFlow</Link>
             </div>
 
 
